@@ -28,10 +28,36 @@ Ollama LLM
 Email Notification (SMTP)
 
 ### 📁 Project Structure
-ai-analyzer/
-├── app.py
-├── requirements.txt
-├── Dockerfile
+└── required-yaml
+
+        ├── ai-analyzer-service.yaml
+
+        ├── ai-analyzer.yaml
+
+        ├── aiops.yaml
+
+        ├── fail-pod.yaml
+        
+        ├── ollama-deployment.yaml
+
+        ├── ollama-service.yaml
+
+        ├── pod-alert.yaml
+
+        ├── rbac.yaml
+
+        ├── values-fargate.yaml
+
+        ├── values.yaml
+
+└── ai-analyzer
+
+        ├── app.py
+
+        ├── requirements.txt
+
+        ├── Dockerfile
+
 └── README.md
 
 
