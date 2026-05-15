@@ -1,0 +1,18 @@
+grafana:
+  enabled: true
+
+prometheus:
+  prometheusSpec:
+    replicas: 1
+
+nodeExporter:
+  enabled: false
+
+prometheus-node-exporter:
+  enabled: false
+
+kubeStateMetrics:
+  enabled: true
+
+alertmanager:
+  enabled: true
