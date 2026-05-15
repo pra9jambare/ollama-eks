@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-analyzer
+  namespace: aiops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-analyzer
+  template:
+    metadata:
+      labels:
+        app: ai-analyzer
+    spec:
+      serviceAccountName: ai-analyzer
+      containers:
+      - name: ai-analyzer
+        image: 937749309122.dkr.ecr.ap-south-1.amazonaws.com/ai-analyzer:latest
+        ports:
+        - containerPort: 8080
