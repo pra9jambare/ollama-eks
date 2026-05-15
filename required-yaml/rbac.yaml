@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: ai-analyzer
+  namespace: aiops
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: ai-analyzer-role
+rules:
+- apiGroups: [""]
+  resources:
+  - pods
+  - events
+  - namespaces
+  - nodes
+  verbs:
+  - get
+  - list
+  - watch
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ai-analyzer-binding
+subjects:
+- kind: ServiceAccount
+  name: ai-analyzer
+  namespace: aiops
+
+roleRef:
+  kind: ClusterRole
+  name: ai-analyzer-role
+  apiGroup: rbac.authorization.k8s.io
