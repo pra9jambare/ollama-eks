@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: broken-pod
+spec:
+  containers:
+  - name: broken
+    image: nginx
+    command: ["sh", "-c", "exit 1"]
