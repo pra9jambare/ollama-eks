@@ -90,14 +90,14 @@ kubectl exec -it -n aiops deploy/ollama -- ollama pull phi3
 phi3 (lightweight, recommended)
 tinyllama (very small footprint)
 
-###⚙️ Step 5 — Configure Alertmanager
+### ⚙️ Step 5 — Configure Alertmanager
 Update Helm values:
 ``` bash
 helm upgrade monitoring prometheus-community/kube-prometheus-stack -n monitoring -f values.yaml
 ``` 
 
 
-###📧 Step 6 — Configure Email (SMTP)
+### 📧 Step 6 — Configure Email (SMTP)
 ``` yaml
 Inside app.py:
 
