@@ -1,0 +1,28 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: ai-eks-cluster
+  region: ap-south-1
+  version: "1.30"
+
+iam:
+  withOIDC: true
+
+fargateProfiles:
+  - name: fp-default
+    selectors:
+      - namespace: default
+      - namespace: kube-system
+
+  - name: monitoring
+    selectors:
+      - namespace: monitoring
+
+  - name: aiops
+    selectors:
+      - namespace: aiops
+
+cloudWatch:
+  clusterLogging:
+    enableTypes: ["*"]
